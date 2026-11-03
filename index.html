@@ -1047,7 +1047,7 @@ function renderList(){
   var simOpts=sims(R).map(function(s){return '<option'+(q.sim===s?' selected':'')+'>'+esc(s)+'</option>'}).join('');
   var sensOpts=SENSORS.map(function(s){return '<option'+(q.sensor===s?' selected':'')+'>'+esc(s)+'</option>'}).join('');
   var html='<div class="top">'+home()+'<div class="sp"></div></div>'+
-   '<h1>'+logo()+'<span class="ttl">Fuji <span>Recipes</span></span></h1><p class="credit-line" id="madeby">Created by Elfee, for Le Boyfriend <span class="hrt" aria-hidden="true">♥</span></p><p class="sub">'+R.length+' film simulation recipes · tap one to copy its settings</p>'+
+   '<h1>'+logo()+'<span class="ttl">Fuji <span>Recipes</span></span></h1><p class="credit-line" id="madeby">Created by Elfee</p><p class="sub">'+R.length+' film simulation recipes · tap one to copy its settings</p>'+
    '<label class="search"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search Portra, Kodachrome, night…" value="'+esc(q.text)+'" aria-label="Search recipes" autocomplete="off"></label>'+
    '<div class="filters"><select id="fsim" aria-label="Film simulation"><option value="">All film sims</option>'+simOpts+'</select><select id="fsen" aria-label="Sensor"><option value="">All sensors</option>'+sensOpts+'</select></div>'+
    '<div class="chips"><button class="chip'+(q.favs?' on':'')+'" id="ffav" aria-pressed="'+q.favs+'">♥ Favourites ('+st.favs.length+')</button>'+(q.text||q.sim||q.sensor||q.favs?'<button class="chip" id="fclr">Clear filters</button>':'')+'</div>'+
@@ -1057,7 +1057,7 @@ function renderList(){
      '<div class="b"><div class="n">'+esc(r.name)+'</div><div class="s">'+esc(r.sim)+'</div><div class="a">'+esc(r.sensors.join(' · '))+'</div></div>'+
      '<button class="heart'+(fs[r.id]?' on':'')+'" data-fav="'+r.id+'" aria-label="'+(fs[r.id]?'Remove from':'Add to')+' favourites" aria-pressed="'+!!fs[r.id]+'"><i>'+(fs[r.id]?'♥':'♡')+'</i></button></div>'}).join('')
     :'<p class="empty">No recipes match. Try a different search or clear the filters.</p>')+
-   '</div><footer>Recipes and sample photos by their authors, via <a href="https://fujixweekly.com/">Fuji X Weekly</a>.<br>Photos load from the source site and need internet.<br><span class="madeby">Created by Elfee, for Le Boyfriend ♥</span></footer>';
+   '</div><footer>Recipes and sample photos by their authors, via <a href="https://fujixweekly.com/">Fuji X Weekly</a>.<br>Photos load from the source site and need internet.<br><span class="madeby">Created by Elfee</span></footer>';
   app.innerHTML=html;
   var inp=document.getElementById('q');
   inp.addEventListener('input',function(){q.text=inp.value;var pos=inp.selectionStart;renderList();var n=document.getElementById('q');n.focus();try{n.setSelectionRange(pos,pos)}catch(e){}});
